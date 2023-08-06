@@ -1,0 +1,62 @@
+
+<!-- property binding -->
+
+<p class="bg-primary text-white m-3 p-4 text-center" [innerHTML]="productName">
+
+</p>
+
+<p class="bg-dark text-white m-3 p-4 text-center" [innerText]="productModel">
+
+</p>
+<p class="bg-dark text-white m-3 p-4 text-center" [textContent]="'Most popular'">
+
+</p>
+
+<input type="text" class="form-control" [value]="ProductSkill">
+
+<!-- method binding string interpollation -->
+
+<p class="bg-info text-white p-4 m-3">{{getProductId()}} is the id of Product.</p>
+
+<!-- <input type="text" class="form-control" [value]="'No Charger'"> -->
+<!-- <button class="btn btn-warning m-5" [disabled]="isDisable">Add Product</button> -->
+
+<!-- event binding -->
+
+<button class="btn btn-primary" 
+(click)="addProduct()"
+
+>Add Product</button>
+
+<button class="btn btn-danger"
+[disabled]="isDisabled"
+(click)="removeProduct()">
+    Remove Product
+</button>
+
+<p class="bg-dark text-white p-4 m-3" [innerHTML]="productStatus">
+
+</p>
+
+<!-- one way data binding -->
+
+<input type="text" 
+class="form-control m-3"
+(keyup)="productSearch($event)"
+>
+
+
+<!-- two way data binding -->
+
+<input type="text" 
+class="form-control m-3"
+[(ngModel)] ="searchProdName"
+>
+
+<p class="bg-info p-4 m-3"
+*ngIf="searchProdName.length>0"
+[innerHTML]="searchProdName">
+
+</p>
+
+

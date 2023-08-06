@@ -1,0 +1,20 @@
+
+
+
+.myHeader , .myBody {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+// .container{
+//     font-size: 16px;
+//     line-height: 16px;
+//     height: 32px;
+//     overflow: hidden;
+//   }
+  
+//   .show {
+//     overflow: visible;
+//     height: auto;
+//   }

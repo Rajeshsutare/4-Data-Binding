@@ -1,0 +1,17 @@
+
+
+{{isAvailable}}
+<p [ngStyle]="{backgroundColor: isAvailable ? bgColor : bgGray}"
+[ngClass]="
+{
+    'text-dark':isAvailable,
+    'text-danger':!isAvailable
+}
+"
+class="p-3 mt-3">
+    This Is mobile {{modelName}} of Model {{modelNo}}
+    <strong *ngIf="isAvailable else isNotAvailable">Is Available</strong>
+    <ng-template #isNotAvailable>
+        <strong>is Out Of Stock</strong>
+    </ng-template>
+</p>

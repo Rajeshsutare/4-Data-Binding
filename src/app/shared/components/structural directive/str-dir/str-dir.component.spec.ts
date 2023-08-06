@@ -1,0 +1,23 @@
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+
+import { StrDirComponent } from './str-dir.component';
+
+describe('StrDirComponent', () => {
+  let component: StrDirComponent;
+  let fixture: ComponentFixture<StrDirComponent>;
+
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      declarations: [ StrDirComponent ]
+    })
+    .compileComponents();
+
+    fixture = TestBed.createComponent(StrDirComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});

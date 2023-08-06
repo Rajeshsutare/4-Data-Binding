@@ -1,0 +1,40 @@
+
+<!-- <p [ngStyle]="{backgroundColor: 'orange'}"
+class="p-2 mt-3">
+    This is mobile {{name}} of model {{modelNo}}.
+</p> -->
+
+{{isAvailable}}
+<p [ngStyle]="{backgroundColor: isAvailable ? bgColor : bgGray}"
+class="p-2"
+[ngClass]="
+{
+'text-white':isAvailable,
+'text-danger':!isAvailable
+}"
+>
+     mobile {{name}} of model {{modelNo}} is 
+     <!-- <strong *ngIf="isAvailable">Available</strong>  -->
+     <!-- <strong *ngIf="!isAvailable">out of stock</strong> -->
+     <strong *ngIf="isAvailable; else notAvailable">Available</strong> 
+     <ng-template #notAvailable>
+        <strong>out of stock</strong>
+     </ng-template>
+</p>
+
+
+
+
+
+
+<!-- {{isAvailable}}
+<p [ngStyle]="{backgroundColor: isAvailable ? bgColor : bgGray}"
+class="p-2">
+     mobile {{name}} of model {{modelNo}} is
+     <strong *ngIf="isAvailable" >Available</strong>
+     <strong *ngIf="!isAvailable" >out of stock</strong>
+</p> -->
+
+
+
+
