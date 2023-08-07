@@ -9,9 +9,10 @@ import { mobileProducts } from '../mobiles';
   styleUrls: ['./mobiles.component.scss']
 })
 export class MobilesComponent implements OnInit {
-  public prodInfo :string='1';
   public mobiles ! :Array<Imobiles>;
-  public show = false;
+  
+  public prodInfo :string='coupen';
+
   constructor() { }
 
   ngOnInit(): void {
@@ -22,6 +23,13 @@ export class MobilesComponent implements OnInit {
  }
  alertBuy(){
   alert(`Order placed Successfully !!!`)
+ }
+
+ onClick(eve:Event){
+  console.log(`clicked`)
+  let target = eve.target as HTMLAnchorElement
+  let value = target.getAttribute('data-id')!
+ this.prodInfo=value
  }
 
 }

@@ -47,38 +47,71 @@ class="row mb-4"
                     {{m.percentOff}}
                 </li>
             </div>
-        
-            <li>
-                <button type="button" class="btn btn-outline-primary mr-2"
-                (click)="prodInfo='1'"
-                >Apply Coupens</button>
-           
-                <button type="button" class="btn btn-outline-success"
-                (click)="prodInfo='2'"
-                >Specifications</button>
+        </ul>
+        <ul class="nav nav-pills mb-2">
+            <li class="nav-item">
+                <a href="javascrpit:;" class="nav-link "
+                (click)="onClick($event)"
+                data-id="coupen"
+                [ngClass]="
+                {
+                    'active': prodInfo == 'coupen'
+                }"
+                >Coupens</a>
             </li>
-            </ul>
-                <div [ngSwitch]="prodInfo">
-                    <div class=" p-3 " *ngSwitchCase="1">                      
-                       <p>
-                        <i class="fa-solid fa-tag text-success"></i> Bank OfferExtra ₹500 off on ICICI Bank Debit Card EMI Txns on Net Cart Value of ₹24,999 and aboveT&C
-                       </p>
+            <li class="nav-item">
+                <a href="javascrpit:;" class="nav-link"
+                (click)="onClick($event)"
+                data-id="specifications"
+                [ngClass]="
+                {
+                    'active': prodInfo == 'specifications'
+                }"
+                >Features</a>
+            </li>
+            <li class="nav-item">
+                <a href="javascrpit:;" class="nav-link"
+                (click)="onClick($event)"
+                data-id="more"
+                [ngClass]="
+                {
+                    'active': prodInfo == 'more'
+                }"
+                >Info</a>
+            </li>
+        </ul>
+            
+                      <div class="card mb-2">
+                        <div class="card-body"
+                        *ngIf="prodInfo === 'coupen'"
+                        >
+                            <p>
+                                <i class="fa-solid fa-tag text-success"></i> Bank OfferExtra ₹500 off on ICICI Bank Debit Card EMI Txns on Net Cart Value of ₹24,999 and aboveT&C
+                               </p>
+                                <p>
+                                    <i class="fa-solid fa-tag text-success"></i>  Bank OfferExtra ₹500 off on Kotak Bank Credit Card EMI Txns on Net Cart Value of ₹24,999 and aboveT&C
+                                </p>
+                        </div>
+                        <div class="card-body"
+                        *ngIf="prodInfo === 'specifications'"
+                        >
+                            <ul>
+                                <li>4 GB RAM | 64 GB RAM | 128 GB EXPANDABLE</li>
+                                <li>64MP AI Rear Camera </li>
+                                <li>48MP Front Camera</li>
+                                <li>6.8inch HD+ IPS Display</li>
+                                <li>Side Mounted Fingerprint Sensor</li>
+                                <li>7000 mAh Massive Battery</li>
+                            </ul>
+                        </div>
+                        <div class="card-body"
+                        *ngIf="prodInfo === 'more'"
+                        >
+                       Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis consequatur excepturi pariatur tempore eveniet dolor quam ipsa tenetur ad suscipit id aut, debitis repudiandae, quasi, quo a velit sunt neque.
+                        </div>
+                      </div>
+                      
 
-                        <p>
-                            <i class="fa-solid fa-tag text-success"></i>  Bank OfferExtra ₹500 off on Kotak Bank Credit Card EMI Txns on Net Cart Value of ₹24,999 and aboveT&C
-                        </p>
-                    </div>
-                    <div class=" p-3 " *ngSwitchCase="2">
-                        <ul>
-                            <li>4 GB RAM | 64 GB RAM | 128 GB EXPANDABLE</li>
-                            <li>64MP AI Rear Camera </li>
-                            <li>48MP Front Camera</li>
-                            <li>6.8inch HD+ IPS Display</li>
-                            <li>Side Mounted Fingerprint Sensor</li>
-                            <li>7000 mAh Massive Battery</li>
-                        </ul>
-                    </div>
-                </div>
           
             <button type="button" class="btn btn-warning btn-lg mr-3 col-sm-mb-2 font-weight-bold"
             (click)="alertMsg()">
